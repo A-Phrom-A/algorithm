@@ -2,21 +2,20 @@
 #include <vector>
 using namespace std;
 
-
-int inter(vector<int>& A, int low, int high, int k, vector<int>& mid_indices) {
-    if (low <= high && k >= A[low] && k <= A[high]) {
-        int mid = low + ((k - A[low]) * (high - low) / (A[high] - A[low]));
-        mid_indices.push_back(mid);
-
-        if (A[mid] == k) {
-            return mid;
-        }
-        if (A[mid] < k) {
-            return inter(A, mid + 1, high, k, mid_indices);
-        }
-        return inter(A, low, mid - 1, k, mid_indices);
-    }
-    return -1;
+int inter(vector<int>& A, int L,int H,int K,vector<int>& M){
+	if(L <= H && k >= A[L] && k <= A[H]){
+		int mid = L + ((k -A[L]) * (H - L) / (A[H] - A[L]));
+		M.push_back(mid);
+		
+		if(A[mid] == k){
+			return mid;
+		}
+		if (A[mid] < k){
+			return inter(A,mid+1,H,k,M);
+		}else{
+			return inter(A,L,mid-1,k,M);
+		}
+	}
 }
 
 int main() {

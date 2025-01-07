@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-// ???????? Interpolation Search ??? Recursive
+
 int interpolationSearchRecursive(vector<int>& A, int low, int high, int k, vector<int>& mid_indices) {
     if (low <= high && k >= A[low] && k <= A[high]) {
         int mid = low + ((k - A[low]) * (high - low) / (A[high] - A[low]));

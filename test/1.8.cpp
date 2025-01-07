@@ -2,32 +2,29 @@
 #include <climits>
 using namespace std;
 
-int main() {
-    int n;
-    cin >> n;
+int main(){
+	int n ,x;
 	
-    int A[n];
-    
-    for (int i = 0; i < n; i++) {
+	cin >> n ;
+	cin >> x;
+	int A[n];
+	for(int i =0;i<n;i++){
 		cin >> A[i];
-    }
-
-    int maxSum = INT_MIN;
-    for (int i = 0; i < n; i++) {
-        for (int j = i; j < n; j++) {
-            int Sum = 0;
-            for (int k = i; k <= j; k++) {
-                Sum += A[k];
-            }
-            if (Sum > maxSum) {
-                maxSum = Sum;
-            }
-        }
-    }
+	}
 	
-	cout << maxSum << endl;
-    
+	M_Sum = INT_MIN;
 	
-    return 0;
+	for(int i =0;i<n;i++){
+		for(int j = i ; j<n ;j++){
+			int Sum = 0;
+			for(int k = i; k <= j ;k++){
+				Sum += A[k];
+			}
+			if(Sum > M_Sum){
+					M_Sum = Sum;
+				}
+		}
+	}
+	cout << M_Sum;
+	return 0;
 }
-

@@ -12,7 +12,6 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> A[i];
     }
-
     sort(A.begin(), A.end()); 
 
     int L = 0, R = n - 1;
@@ -31,11 +30,7 @@ int main() {
             R--;
         }
     }
-
-
         cout << minD << endl;
-
-
     return 0;
 }
 
